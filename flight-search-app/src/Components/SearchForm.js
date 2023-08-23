@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 function SearchForm() {
     const [departureAirport, setDepartureAirport] = useState("");
     const [arrivalAirport, setArrivalAirport] = useState("");
@@ -7,6 +8,7 @@ function SearchForm() {
     const [arrivalDate, setArrivalDate] = useState("");
     const [oneWay, setOneWay] = useState(true);
 
+    
 
     return (
         <div>
