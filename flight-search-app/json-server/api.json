@@ -1,12 +1,48 @@
 {
-    "GetFlights":[
+    "GetFlights": [
         {
-            "id":1,
-            "name":"test1"
+            "id": 1,
+            "name": "IST-JFK",
+            "departure": "IST",
+            "arrival": "JFK",
+            "departureDate": "2023-02-01",
+            "arrivalDate": "2023-02-02",
+            "price": 500
         },
         {
-            "id":2,
-            "name":"test2"
+            "id": 2,
+            "name": "JFK-LHR",
+            "departure": "JFK",
+            "arrival": "LHR",
+            "departureDate": "2023-10-06",
+            "arrivalDate": "2023-10-07",
+            "price": 200
+        },
+        {
+            "id": 3,
+            "name": "IST-LHR",
+            "departure": "IST",
+            "arrival": "LHR",
+            "departureDate": "2023-11-08",
+            "arrivalDate": "2023-11-09",
+            "price": 600
+        },
+        {
+            "id": 4,
+            "name": "JFK-IST",
+            "departure": "JFK",
+            "arrival": "IST",
+            "departureDate": "2023-09-05",
+            "arrivalDate": "2023-09-06",
+            "price": 1000
+        }, {
+            "id": 5,
+            "name": "JFK-LHR",
+            "departure": "JFK",
+            "arrival": "LHR",
+            "departureDate": "2023-03-05",
+            "arrivalDate": "2023-03-06",
+            "price": 300
         }
     ]
 }
