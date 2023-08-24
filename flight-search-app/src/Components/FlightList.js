@@ -49,13 +49,14 @@ function FlightList({filters}) {
         return <p>Loading...</p>
     }
     if(!flights || flights.length===0){
-        return <p>Uçuş bulunamadi.</p>
+        return <p>Flight not found.</p>
     }
 
 
   return (
     <div>
-        <div>
+        <br/>
+        <div className='bar'>
             <button onClick={() => setSort("price")}>Sort By Price</button>
             <button onClick={() => setSort("name")}>Sort By Name</button>
         </div>
