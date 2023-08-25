@@ -7,7 +7,14 @@
             "arrival": "JFK",
             "departureDate": "2023-02-01",
             "arrivalDate": "2023-02-02",
-            "price": 500
+            "price": 500,
+            "departureTime":"08:05",
+            "arrivalTime":"10:50",
+            "duration":"2h 30m",
+            "arrivalAirport":"John F. Kennedy International Airport",
+            "arrivalCity":"New York / USA",
+            "departureAirport":"İstanbul Airport",
+            "departureCity":"İstanbul / Türkiye"
         },
         {
             "id": 2,
@@ -16,7 +23,14 @@
             "arrival": "LHR",
             "departureDate": "2023-10-06",
             "arrivalDate": "2023-10-07",
-            "price": 200
+            "price": 200,
+            "departureTime":"11:05",
+            "arrivalTime":"16:50",
+            "duration":"4h 30m",
+            "departureAirport":"John F. Kennedy International Airport",
+            "departureCity":"New York / USA",
+            "arrivalAirport":"Heathrow Airport",
+            "arrivalCity":"London / England"
         },
         {
             "id": 3,
@@ -25,7 +39,14 @@
             "arrival": "LHR",
             "departureDate": "2023-11-08",
             "arrivalDate": "2023-11-09",
-            "price": 600
+            "price": 600,
+            "departureTime":"08:05",
+            "arrivalTime":"14:50",
+            "duration":"5h 30m",
+            "arrivalAirport":"Heathrow Airport",
+            "arrivalCity":"London / England",
+            "departureAirport":"İstanbul Airport",
+            "departureCity":"İstanbul / Türkiye"
         },
         {
             "id": 4,
@@ -34,15 +55,109 @@
             "arrival": "IST",
             "departureDate": "2023-09-05",
             "arrivalDate": "2023-09-06",
-            "price": 1000
-        }, {
+            "price": 1000,
+            "departureTime":"20:05",
+            "arrivalTime":"21:50",
+            "duration":"1h 30m",
+            "departureAirport":"John F. Kennedy International Airport",
+            "departureCity":"New York / USA",
+            "arrivalAirport":"İstanbul Airport",
+            "arrivalCity":"İstanbul / Türkiye"
+        },
+        {
             "id": 5,
             "name": "JFK-LHR",
             "departure": "JFK",
             "arrival": "LHR",
             "departureDate": "2023-03-05",
             "arrivalDate": "2023-03-06",
-            "price": 300
+            "price": 300,
+            "departureTime":"08:05",
+            "arrivalTime":"10:50",
+            "duration":"2h 30m",
+            "departureAirport":"John F. Kennedy International Airport",
+            "departureCity":"New York / USA",
+            "arrivalAirport":"Heathrow Airport",
+            "arrivalCity":"London / England"
+        }, {
+            "id": 6,
+            "name": "CDG-LHR",
+            "departure": "CDG",
+            "arrival": "LHR",
+            "departureDate": "2023-04-05",
+            "arrivalDate": "2023-04-06",
+            "price": 700,
+            "departureTime":"07:05",
+            "arrivalTime":"10:50",
+            "duration":"3h 30m",
+            "arrivalAirport":"Heathrow Airport",
+            "arrivalCity":"London / England",
+            "departureAirport":"Charles de Gaulle Airport",
+            "departureCity":"Paris / France"
+        },
+        {
+            "id": 7,
+            "name": "JFK-CDG",
+            "departure": "JFK",
+            "arrival": "CDG",
+            "departureDate": "2023-03-01",
+            "arrivalDate": "2023-03-02",
+            "price": 300,
+            "departureTime":"08:05",
+            "arrivalTime":"13:50",
+            "duration":"5h 00m",
+            "arrivalAirport":"Charles de Gaulle Airport",
+            "arrivalCity":"Paris / France",
+            "departureAirport":"John F. Kennedy International Airport",
+            "departureCity":"New York / USA"
+        },
+        {
+            "id": 8,
+            "name": "DXB-LHR",
+            "departure": "DXB",
+            "arrival": "LHR",
+            "departureDate": "2023-07-05",
+            "arrivalDate": "2023-07-06",
+            "price": 1000,
+            "departureTime":"09:05",
+            "arrivalTime":"15:50",
+            "duration":"5h 30m",
+            "arrivalAirport":"Heathrow Airport",
+            "arrivalCity":"London / England",
+            "departureAirport":"Dubai International Airport",
+            "departureCity":"Dubai / UAE"
+        },
+        {
+            "id": 9,
+            "name": "JFK-DXB",
+            "departure": "JFK",
+            "arrival": "DXB",
+            "departureDate": "2023-03-05",
+            "arrivalDate": "2023-03-06",
+            "price": 1200,
+            "departureTime":"08:30",
+            "arrivalTime":"18:50",
+            "duration":"9h 30m",
+            "arrivalAirport":"Dubai International Airport",
+            "arrivalCity":"Dubai / UAE",
+            "departureAirport":"John F. Kennedy International Airport",
+            "departureCity":"New York / USA"
+        },
+        {
+            "id": 10,
+            "name": "IST-CDG",
+            "departure": "IST",
+            "arrival": "CDG",
+            "departureDate": "2023-09-05",
+            "arrivalDate": "2023-09-06",
+            "price": 500,
+            "departureTime":"08:05",
+            "arrivalTime":"11:50",
+            "duration":"3h 30m",
+            "arrivalAirport":"Charles de Gaulle Airport",
+            "arrivalCity":"Paris / France",
+            "departureAirport":"İstanbul Airport",
+            "departureCity":"İstanbul / Türkiye"
         }
     ]
 }
