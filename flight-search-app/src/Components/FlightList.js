@@ -74,11 +74,11 @@ function FlightList({ filters }) {
         <div>
             <br />
             <div className='bar2'>
-                <button onClick={() => setSort("price")}>Sort By Price</button>
-                <button onClick={() => setSort("name")}>Sort By Name</button>
-                <button onClick={() => setSort("duration")}>Sort By Duration</button>
-                <button onClick={() => setSort("depTime")}>Sort By Departure Time</button>
-                <button onClick={() => setSort("arrTime")}>Sort By Arrival Time</button>
+                <button className='button-1' onClick={() => setSort("price")}>Sort By Price</button>
+                <button className='button-1' onClick={() => setSort("name")}>Sort By Name</button>
+                <button className='button-1' onClick={() => setSort("duration")}>Sort By Duration</button>
+                <button className='button-1' onClick={() => setSort("depTime")}>Sort By Departure Time</button>
+                <button className='button-1' onClick={() => setSort("arrTime")}>Sort By Arrival Time</button>
             </div>
             <ul className='list'>
                 {flights.map((flight) => (
@@ -92,7 +92,7 @@ function FlightList({ filters }) {
                         Arrival Time: {flight.arrivalTime} <br />
                         Duration : {flight.duration} <br />
                         Price: {flight.price}₺ <br />
-                        <button onClick={() => toggleFlightDetails(flight.id)}>
+                        <button className='button-1' onClick={() => toggleFlightDetails(flight.id)}>
                             {expandedFlightId === flight.id ? 'Hide Details' : 'Show Details'}
                         </button>
                         {expandedFlightId === flight.id && (
