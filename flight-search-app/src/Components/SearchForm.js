@@ -43,7 +43,7 @@ function SearchForm({onFilterChange}) {
                 One Way Flight
                 <input type="checkbox" checked={oneWay} onChange={() => setOneWay(!oneWay)} />
             </label>
-            <button onClick={handleFilterChange}>Search</button>
+            <button className='button-2'onClick={handleFilterChange}>Search</button>
         </div>
     )
 }
