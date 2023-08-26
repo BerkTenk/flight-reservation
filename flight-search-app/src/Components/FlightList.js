@@ -73,7 +73,7 @@ function FlightList({ filters }) {
     return (
         <div>
             <br />
-            <div className='bar'>
+            <div className='bar2'>
                 <button onClick={() => setSort("price")}>Sort By Price</button>
                 <button onClick={() => setSort("name")}>Sort By Name</button>
                 <button onClick={() => setSort("duration")}>Sort By Duration</button>

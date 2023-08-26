@@ -1,14 +1,24 @@
 .App {
   text-align: center;
+  background-color: rgb(138, 216, 239);
 }
 
-.bar{
-  background-color: rgb(202, 202, 215);
+.bar1{
   display: flex;
   justify-content: space-evenly;
 }
 
-.list{
-  background-color: rgb(197, 231, 147);
+.bar2{
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 4em ;
+  padding-right: 4em;
+}
 
+.list:hover{
+  background-color: rgb(190, 240, 243);
+}
+
+ul.list{
+  list-style-type:none;
 }
