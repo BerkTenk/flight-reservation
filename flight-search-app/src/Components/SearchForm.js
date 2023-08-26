@@ -16,18 +16,17 @@ function SearchForm({onFilterChange}) {
             arrivalDate,
             oneWay,
         };
-        if(departureAirport.trim() === "" && arrivalAirport.trim() === ""){
-            alert("Please enter departure or arrival airport.");
+        if((departureAirport.trim() === "" && arrivalAirport.trim() === "") && (departureDate.trim() === "" && arrivalDate.trim() === "") ){
+            alert("Please enter any departure or arrival info to search.");
             setDepartureAirport("");
             setArrivalAirport("");
-            onFilterChange(filters);
-        } else if((departureAirport.trim() !== "" && arrivalAirport.trim() === "") ||
-        (departureAirport.trim() === "" && arrivalAirport.trim() !== "")){
+            setArrivalDate("");
+            setDepartureDate("");
+            onFilterChange("","","","");
+        }  else{
             onFilterChange(filters);
         }
-         else {
-            alert("Invalid search input");
-        }
+         
         
         
     };
