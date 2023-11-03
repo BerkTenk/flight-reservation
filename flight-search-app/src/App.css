@@ -1,11 +1,13 @@
+body{
+  background-color: rgb(138, 216, 239);
+}
 .App {
   text-align: center;
-  background-color: rgb(138, 216, 239);
 }
 
 .bar1{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .bar2{
@@ -14,9 +16,12 @@
   padding-left: 4em ;
   padding-right: 4em;
 }
-
-.list:hover{
-  background-color: rgb(190, 240, 243);
+li{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+li:hover{
+  background-color: rgb(180, 240, 243);
 }
 
 ul.list{
@@ -65,4 +70,35 @@ ul.list{
 
 .button-1:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+/* .inputs{
+  border-radius: 40%;
+  /* width: 150px;
+  height: 30px; */
+  /* padding: 10px; */
+  /* border: 1px solid black;
+  margin: 5px; */ 
+/* } */
+
+@media (max-width:1000px) {
+  .button-2{
+    width: 4em;
+    margin: 5px;
+  }
+  .button-1{
+    height: 4em;
+    font-size: small;
+    margin: 5px;
+  }
+  .bar1{
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+  }
+  .bar2{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  
 }

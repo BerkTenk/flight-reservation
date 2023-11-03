@@ -103,7 +103,7 @@ function FlightList({ filters }) {
                                 Arrival Airport: {flight.arrivalAirport} <br />
                             </div>
                         )}
-                        <hr />
+                        
 
                     </li>
                 )

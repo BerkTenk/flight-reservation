@@ -32,13 +32,13 @@ function SearchForm({onFilterChange}) {
     };
     return (
         <div className='bar1'>
-            <input type="text" placeholder="Departure " value={departureAirport} onChange={(e) => setDepartureAirport(e.target.value)} />
-            <input type="text" placeholder="Arrival " value={arrivalAirport} onChange={(e) => setArrivalAirport(e.target.value)} />
+            <input type="text" className='inputs' placeholder="Departure " value={departureAirport} onChange={(e) => setDepartureAirport(e.target.value)} />
+            <input type="text" className='inputs' placeholder="Arrival " value={arrivalAirport} onChange={(e) => setArrivalAirport(e.target.value)} />
             {oneWay?<label>Departure Date: </label>:<label>Departure Date and Arrival Date: </label>}
             
-            <input type="date" placeholder="Departure Date" value={departureDate} onChange={(e) => setDepartureDate(e.target.value)} />
+            <input type="date" className='inputs' placeholder="Departure Date" value={departureDate} onChange={(e) => setDepartureDate(e.target.value)} />
             {!oneWay &&
-             <input type="date" placeholder="Arrival Date" value={arrivalDate} onChange={(e) => setArrivalDate(e.target.value)} />}
+             <input type="date" className='inputs' placeholder="Arrival Date" value={arrivalDate} onChange={(e) => setArrivalDate(e.target.value)} />}
             <label>
                 One Way Flight
                 <input type="checkbox" checked={oneWay} onChange={() => setOneWay(!oneWay)} />
