@@ -40,7 +40,7 @@ npm install
 
 To start the application locally, run the following command:
 ```bash
-npm start
+node server.js
 ```
 
 This will start the development server, and you can view the app by navigating to http://localhost:3000 in your browser.
