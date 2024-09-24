@@ -26,7 +26,21 @@ function FlightList({ filters }) {
             .finally(() => {
                 setLoading(false);
             });
-    }, [filters, sort]);
+    }, [filters]);
+
+    useEffect(() => {
+        const sortFlights = () => {
+            let sortedFlights = [...flights];
+            if (sort === "name") {
+                sortedFlights.sort((a, b) => a.flightName.localeCompare(b.flightName));
+            }
+            setFlights(sortedFlights);
+        };
+
+        if (flights.length > 0) {
+            sortFlights();
+        }
+    }, [sort, flights]);
 
     const [expandedFlightId, setExpandedFlightId] = useState(null);
 
