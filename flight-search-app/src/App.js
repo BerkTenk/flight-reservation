@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Flight Search App</h1>
+      <h1>Flight Reservation App</h1>
       <SearchForm onFilterChange={handleFilterChange}/>
       <FlightList filters={filters} />
     </div>

@@ -14,7 +14,8 @@
             "arrivalAirport":"John F. Kennedy International Airport",
             "arrivalCity":"New York / USA",
             "departureAirport":"İstanbul Airport",
-            "departureCity":"İstanbul / Türkiye"
+            "departureCity":"İstanbul / Türkiye",
+            "isReserved":false
         },
         {
             "id": 2,
@@ -30,7 +31,8 @@
             "departureAirport":"John F. Kennedy International Airport",
             "departureCity":"New York / USA",
             "arrivalAirport":"Heathrow Airport",
-            "arrivalCity":"London / England"
+            "arrivalCity":"London / England",
+            "isReserved":false
         },
         {
             "id": 3,
@@ -46,7 +48,8 @@
             "arrivalAirport":"Heathrow Airport",
             "arrivalCity":"London / England",
             "departureAirport":"İstanbul Airport",
-            "departureCity":"İstanbul / Türkiye"
+            "departureCity":"İstanbul / Türkiye",
+            "isReserved":false
         },
         {
             "id": 4,
@@ -62,7 +65,8 @@
             "departureAirport":"John F. Kennedy International Airport",
             "departureCity":"New York / USA",
             "arrivalAirport":"İstanbul Airport",
-            "arrivalCity":"İstanbul / Türkiye"
+            "arrivalCity":"İstanbul / Türkiye",
+            "isReserved":true
         },
         {
             "id": 5,
@@ -78,7 +82,8 @@
             "departureAirport":"John F. Kennedy International Airport",
             "departureCity":"New York / USA",
             "arrivalAirport":"Heathrow Airport",
-            "arrivalCity":"London / England"
+            "arrivalCity":"London / England",
+            "isReserved":false
         }, {
             "id": 6,
             "name": "CDG-LHR",
@@ -93,7 +98,8 @@
             "arrivalAirport":"Heathrow Airport",
             "arrivalCity":"London / England",
             "departureAirport":"Charles de Gaulle Airport",
-            "departureCity":"Paris / France"
+            "departureCity":"Paris / France",
+            "isReserved":true
         },
         {
             "id": 7,
@@ -109,7 +115,8 @@
             "arrivalAirport":"Charles de Gaulle Airport",
             "arrivalCity":"Paris / France",
             "departureAirport":"John F. Kennedy International Airport",
-            "departureCity":"New York / USA"
+            "departureCity":"New York / USA",
+            "isReserved":false
         },
         {
             "id": 8,
@@ -125,7 +132,8 @@
             "arrivalAirport":"Heathrow Airport",
             "arrivalCity":"London / England",
             "departureAirport":"Dubai International Airport",
-            "departureCity":"Dubai / UAE"
+            "departureCity":"Dubai / UAE",
+            "isReserved":true
         },
         {
             "id": 9,
@@ -141,7 +149,8 @@
             "arrivalAirport":"Dubai International Airport",
             "arrivalCity":"Dubai / UAE",
             "departureAirport":"John F. Kennedy International Airport",
-            "departureCity":"New York / USA"
+            "departureCity":"New York / USA",
+            "isReserved":false
         },
         {
             "id": 10,
@@ -157,7 +166,8 @@
             "arrivalAirport":"Charles de Gaulle Airport",
             "arrivalCity":"Paris / France",
             "departureAirport":"İstanbul Airport",
-            "departureCity":"İstanbul / Türkiye"
+            "departureCity":"İstanbul / Türkiye",
+            "isReserved":false
         }
     ]
 }

@@ -1,46 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 function FlightList({ filters }) {
     const [flights, setFlights] = useState([]);
     const [loading, setLoading] = useState(true);
     const [sort, setSort] = useState("");
+    const [reservations, setReservations] = useState([]);
 
     useEffect(() => {
-        axios("http://localhost:3000/GetFlights")
+        axios.get("http://localhost:3000/api/flights")
             .then((res) => {
-                let filteredFlights = res.data;
-                if (filters.departureAirport) {
-                    filteredFlights = filteredFlights.filter((flight) =>
-                        flight.departure.toLowerCase().includes(filters.departureAirport.toLowerCase())
-                    )
-                };
-                if (filters.arrivalAirport) {
-                    filteredFlights = filteredFlights.filter((flight) =>
-                        flight.arrival.toLowerCase().includes(filters.arrivalAirport.toLowerCase())
-                    );
-                };
-                if (filters.departureDate) {
-                    filteredFlights = filteredFlights.filter((flight) =>
-                        flight.departureDate.toLowerCase().includes(filters.departureDate.toLowerCase())
-                    );
-                };
-                if (filters.arrivalDate) {
-                    filteredFlights = filteredFlights.filter((flight) =>
-                        flight.arrivalDate.toLowerCase().includes(filters.arrivalDate.toLowerCase())
-                    );
-                };
-                if (sort === "price") {
-                    filteredFlights.sort((a, b) => a.price - b.price);
-                } else if (sort === "name") {
-                    filteredFlights.sort((a, b) => a.name.localeCompare(b.name));
-                } else if (sort === "duration") {
-                    filteredFlights.sort((a, b) => a.duration.localeCompare(b.duration));
-                } else if (sort === "depTime") {
-                    filteredFlights.sort((a, b) => a.departureTime.localeCompare(b.departureTime));
-                } else if (sort === "arrTime") {
-                    filteredFlights.sort((a, b) => a.arrivalTime.localeCompare(b.arrivalTime));
+                // Eğer uçuş verileri "flights" alanı altında geliyorsa:
+                let filteredFlights = res.data.flights || res.data;  // flights alanı varsa, yoksa tüm veri dizisi
+                // Eğer flights bir array değilse diziye çevirmek gerekir.
+                if (!Array.isArray(filteredFlights)) {
+                    filteredFlights = Object.values(filteredFlights);
                 }
-
+    
+                // Diğer filtreleme ve sıralama işlemleri...
                 setFlights(filteredFlights);
             })
             .catch((error) => {
@@ -48,11 +25,20 @@ function FlightList({ filters }) {
             })
             .finally(() => {
                 setLoading(false);
-            })
+            });
     }, [filters, sort]);
 
-
     const [expandedFlightId, setExpandedFlightId] = useState(null);
+
+    const handleReservation = (flightId) => {
+        // Seçili uçuşu bul
+        const selectedFlight = flights.find(flight => flight.id === flightId);
+    
+        // Eğer uçuş zaten rezervasyonlar arasında değilse, ekleyelim
+        if (selectedFlight && !reservations.some(res => res.id === flightId)) {
+            setReservations([...reservations, selectedFlight]);
+        }
+    };
 
     const toggleFlightDetails = (flightId) => {
         if (expandedFlightId === flightId) {
@@ -63,16 +49,14 @@ function FlightList({ filters }) {
     };
 
     if (loading) {
-        return <p>Loading...</p>
+        return <p>Loading...</p>;
     }
     if (!flights || flights.length === 0) {
-        return <p>Flight not found.</p>
+        return <p>Flight not found.</p>;
     }
-
 
     return (
         <div>
-            <br />
             <div className='bar2'>
                 <button className='button-1' onClick={() => setSort("price")}>Sort By Price</button>
                 <button className='button-1' onClick={() => setSort("name")}>Sort By Name</button>
@@ -83,34 +67,42 @@ function FlightList({ filters }) {
             <ul className='list'>
                 {flights.map((flight) => (
                     <li key={flight.id}>
-                        Name:{flight.name}  <br />
-                        Departure:{flight.departure} <br />
-                        Arrival:{flight.arrival} <br />
-                        Departure Date: {flight.departureDate} <br />
-                        Arrival Date: {flight.arrivalDate} <br />
-                        Departure Time: {flight.departureTime} <br />
-                        Arrival Time: {flight.arrivalTime} <br />
-                        Duration : {flight.duration} <br />
-                        Price: {flight.price}₺ <br />
+                        Name: {flight.flightName}  <br />
+                        Number: {flight.flightNumber}  <br />
+                        Airline Code: {flight.airlineCode}  <br />
+                        Destinations: {flight.route.destinations[0]} --- {flight.route.destinations[1]}   <br />
+                        <button className='button-1' onClick={() => handleReservation(flight.id)}> Book Flight </button>
                         <button className='button-1' onClick={() => toggleFlightDetails(flight.id)}>
                             {expandedFlightId === flight.id ? 'Hide Details' : 'Show Details'}
                         </button>
                         {expandedFlightId === flight.id && (
                             <div>
                                 Departure City / Country: {flight.departureCity} <br />
-                                Arrival City / Country: {flight.arrivalCity}  <br />
+                                Arrival City / Country: {flight.arrivalCity} <br />
                                 Departure Airport: {flight.departureAirport} <br />
                                 Arrival Airport: {flight.arrivalAirport} <br />
                             </div>
                         )}
-                        
-
                     </li>
-                )
-                )}
+                ))}
             </ul>
+             {/* Rezervasyonlarım Kısmı */}
+        <h2>My Reservations</h2>
+        {reservations.length === 0 ? (
+            <p>No reservations yet.</p>
+        ) : (
+            <ul className='reservations'>
+                {reservations.map((reservation) => (
+                    <li key={reservation.id}>
+                        Reservation: {reservation.flightName} <br />
+                        Departure: {reservation.departureAirport} <br />
+                        Arrival: {reservation.arrivalAirport} <br />
+                    </li>
+                ))}
+            </ul>
+        )}
         </div>
-    )
+    );
 }
 
-export default FlightList
+export default FlightList;
